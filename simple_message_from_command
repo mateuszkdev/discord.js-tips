@@ -1,10 +1,11 @@
+// command.js
 const { MessageEmbed } = require("discord.js")
 
 /* 
 	command → obiekt komendy ( w tym: nazwa, aliases, opis, run )
 	data → obiekt zawierający m.in (message, args, client)
  */
-const wykonawca = async (
+module.exports = async (
 	command, data
 ) { 
 
@@ -16,4 +17,21 @@ const wykonawca = async (
 		// itd 
 
 	return output.channel ? output.channel.send(embed) : message.channel.send(embed)
+}
+
+// plik komendy
+module.exports = {
+
+	name: "ping",
+	
+	run: async (data) => {
+	
+		return {
+			
+			msg: 'Pong!'
+			
+		}
+
+	}
+
 }
