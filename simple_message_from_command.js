@@ -7,7 +7,7 @@ const { MessageEmbed } = require("discord.js")
  */
 module.exports = async (
 	command, data
-) { 
+) => { 
 
 	const output = await command.run(data)
 	const channel = data.message
