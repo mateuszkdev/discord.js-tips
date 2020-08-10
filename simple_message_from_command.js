@@ -10,13 +10,13 @@ module.exports = async (
 ) => { 
 
 	const output = await command.run(data)
-	const channel = data.message
+	const channel = data.message.channel
 	
 	const embed = new MessageEmbed()
 		.setDescription(output.msg ? output.msg : "")
 		// itd 
 
-	return output.channel ? output.channel.send(embed) : message.channel.send(embed)
+	return output.channel ? output.channel.send(embed) : channel.send(embed)
 }
 
 // plik komendy
